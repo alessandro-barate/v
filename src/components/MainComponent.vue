@@ -21,7 +21,7 @@ export default {
 <template>
     <main>
         <section>
-            <div class="container">
+            <div class="container" v-cloak>
                 <div class="row">
                     <div class="col">
                         <div class="upper-space">
