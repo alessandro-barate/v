@@ -73,7 +73,9 @@ export default {
                             <ul v-for="movie in this.store.movieResults">
                                 <li>{{ movie.title }}</li>
                                 <li>{{ movie.original_title }}</li>
-                                <li>{{ movie.original_language }}</li>
+                                <li>
+                                    <img v-if="movie.original_language === 'it'" src="../assets/img/italy-flag.png" alt="Bandiera italiana" class="flag">
+                                </li>
                                 <li>{{ movie.vote_average }}</li>
                             </ul>
                                 <hr>
@@ -81,7 +83,9 @@ export default {
                             <ul v-for="movie in this.store.tvResults">
                                 <li>{{ movie.name }}</li>
                                 <li>{{ movie.original_name }}</li>
-                                <li>{{ movie.original_language }}</li>
+                                <li>
+                                    <img v-if="movie.original_language === 'it'" src="../assets/img/italy-flag.png" alt="Bandiera italiana" class="flag">
+                                </li>
                                 <li>{{ movie.vote_average }}</li>
                             </ul>
                         </div>
