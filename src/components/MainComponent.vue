@@ -14,33 +14,35 @@ export default {
         };
     },
 
-    // methods: {
-    //     getResults(){
-    //         this.store.loading = true;
+    methods: {
+        getResults(){
+            this.store.loading = true;
 
-    //         // const params = {
-    //         //     url: this.store.endpoints.baseUrl,
-    //         //     key: this.store.endpoints.myApi,
-    //         //     query: this.store.endpoints.query,
-    //         // };
+            console.log('emit get results');
 
-    //         // if (this.store.endpoints.query) {
-    //         //     params;
-    //         // }
+            // const params = {
+            //     url: this.store.endpoints.baseUrl,
+            //     key: this.store.endpoints.myApi,
+            //     query: this.store.endpoints.query,
+            // };
+
+            // if (this.store.endpoints.query) {
+            //     params;
+            // }
             
             
-    //         axios.get(this.store.endpoints.baseUrl + this.store.endpoints.movie + this.store.endpoints.myApi + this.store.endpoints.preQuery + this.store.endpoints.query).then((response) => {
-    //         this.store.movieResults = response.data.results;
-    //         console.log(this.store.movieResults);
-    //         });
-    //         this.store.loading = false;
+            axios.get(this.store.endpoints.baseUrl + this.store.endpoints.movie + this.store.endpoints.myApi + this.store.endpoints.preQuery + this.store.endpoints.query).then((response) => {
+            this.store.movieResults = response.data.results;
+            console.log(this.store.movieResults);
+            });
+            this.store.loading = false;
 
-    //         this.store.endpoints.query = '';
+            this.store.endpoints.query = '';
 
 
-    //     // in caso aggiungere {params} prima della chiusura della parentesi nella chiamata axios
-    //     },
-    // },
+        // in caso aggiungere {params} prima della chiusura della parentesi nella chiamata axios
+        },
+    },
     
 };
 </script>
@@ -55,8 +57,8 @@ export default {
                             <div class="logo">
                                 <img src="../assets/img/BOOLFLIX-05-06-2024.jpg" alt="">
                             </div>
-                            <SearchComponent/>
-                            <!-- @search="getResults" -->
+                            <SearchComponent @search="getResults"/>
+                            
                         </div>
                         <div class="lower-space">
                             <p>ciao</p>

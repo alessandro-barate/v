@@ -46,7 +46,7 @@ export default {
 
 <template>
     <div class="search-section">
-        <input type="text" placeholder="Cerca qui il film" @keyup_enter="this.getResults" v-model="this.store.query">
+        <input type="text" placeholder="Cerca qui il film" @keyup.enter="$emit('search')" v-model="this.store.endpoints.query">
         <!-- $emit('search') -->
     </div>
 </template>
