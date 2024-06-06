@@ -18,8 +18,6 @@ export default {
         getResults(){
             this.store.loading = true;
 
-            console.log('emit get results');
-
             // const params = {
             //     url: this.store.endpoints.baseUrl,
             //     type: th'is.store.endpoints.movie,
@@ -31,8 +29,9 @@ export default {
             // if (this.store.endpoints.query) {
             //     params;
             // }
+            // in caso aggiungere {params} prima della chiusura della parentesi nella chiamata axios
             
-            
+            // API call
             axios.get(this.store.endpoints.baseUrl + this.store.endpoints.movie + this.store.endpoints.myApi + this.store.endpoints.preQuery + this.store.endpoints.query).then((response) => {
             this.store.movieResults = response.data.results;
             console.log(this.store.movieResults);
@@ -40,9 +39,6 @@ export default {
             this.store.loading = false;
 
             this.store.endpoints.query = '';
-
-
-        // in caso aggiungere {params} prima della chiusura della parentesi nella chiamata axios
         },
     },
     
@@ -63,7 +59,12 @@ export default {
                             
                         </div>
                         <div class="lower-space">
-                            <p>ciao</p>
+                            <ul v-for="movie in this.store.movieResults">
+                                <li>{{ movie.title }}</li>
+                                <li>{{ movie.original_title }}</li>
+                                <li>{{ movie.original_language }}</li>
+                                <li>{{ movie.vote_average }}</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
