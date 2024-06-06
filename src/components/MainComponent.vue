@@ -22,7 +22,9 @@ export default {
 
             // const params = {
             //     url: this.store.endpoints.baseUrl,
+            //     type: th'is.store.endpoints.movie,
             //     key: this.store.endpoints.myApi,
+            //     pre: this.store.endpoints.preQuery,
             //     query: this.store.endpoints.query,
             // };
 
