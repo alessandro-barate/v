@@ -31,12 +31,23 @@ export default {
             // }
             // in caso aggiungere {params} prima della chiusura della parentesi nella chiamata axios
             
-            // API call
+            // Movie API call 
             axios.get(this.store.endpoints.baseUrl + this.store.endpoints.movie + this.store.endpoints.myApi + this.store.endpoints.preQuery + this.store.endpoints.query).then((response) => {
             this.store.movieResults = response.data.results;
             console.log(this.store.movieResults);
             });
+
+            // TV serie API call
+            axios.get(this.store.endpoints.baseUrl + this.store.endpoints.tvSerie + this.store.endpoints.myApi + this.store.endpoints.preQuery + this.store.endpoints.query).then((response) => {
+            this.store.tvResults = response.data.results;
+            console.log(this.store.tvResults);
+            });
+
+
+            
             this.store.loading = false;
+
+            
 
             this.store.endpoints.query = '';
         },
@@ -62,6 +73,14 @@ export default {
                             <ul v-for="movie in this.store.movieResults">
                                 <li>{{ movie.title }}</li>
                                 <li>{{ movie.original_title }}</li>
+                                <li>{{ movie.original_language }}</li>
+                                <li>{{ movie.vote_average }}</li>
+                            </ul>
+                                <hr>
+                                <hr>
+                            <ul v-for="movie in this.store.tvResults">
+                                <li>{{ movie.name }}</li>
+                                <li>{{ movie.original_name }}</li>
                                 <li>{{ movie.original_language }}</li>
                                 <li>{{ movie.vote_average }}</li>
                             </ul>
