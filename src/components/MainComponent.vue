@@ -18,19 +18,19 @@ export default {
         getResults(){
             this.store.loading = true;
 
-            const params = {
-                url: this.store.endpoints.baseUrl,
-                key: this.store.endpoints.myApi,
-                query: this.store.endpoints.query,
-            };
+            // const params = {
+            //     url: this.store.endpoints.baseUrl,
+            //     key: this.store.endpoints.myApi,
+            //     query: this.store.endpoints.query,
+            // };
 
-            if (this.store.endpoints.query) {
-                params;
-            }
+            // if (this.store.endpoints.query) {
+            //     params;
+            // }
             
             
-            axios.get(this.store.endpoints.baseUrl + `${'movie'}` + this.store.endpoints.myApi + this.store.endpoints.query, {params}).then((response) => {
-            this.store.movieResults = this.response.results;
+            axios.get(this.store.endpoints.baseUrl + this.store.endpoints.movie + this.store.endpoints.myApi + this.store.endpoints.preQuery + this.store.endpoints.query, {params}).then((response) => {
+            this.store.movieResults = response.results;
             console.log(this.store.movieResults);
             });
             this.store.loading = false;
