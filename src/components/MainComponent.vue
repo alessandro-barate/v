@@ -14,6 +14,31 @@ export default {
         };
     },
 
+    methods: {
+        getResults(){
+            this.store.loading = true;
+
+            const params = {
+                url: this.store.endpoints.baseUrl,
+                key: this.store.endpoints.myApi,
+                query: this.store.endpoints.query,
+            };
+
+            if (this.store.endpoints.query) {
+                params;
+            }
+            
+            
+            axios.get(this.store.endpoints.baseUrl + `${'movie'}` + this.store.endpoints.myApi + this.store.endpoints.query, {params}).then((response) => {
+            this.store.movieResults = this.response.results;
+            console.log(this.store.movieResults);
+            });
+            this.store.loading = false;
+
+
+        // in caso aggiungere {params} prima della chiusura della parentesi nella chiamata axios
+        },
+    },
     
 };
 </script>
@@ -28,7 +53,7 @@ export default {
                             <div class="logo">
                                 <img src="../assets/img/BOOLFLIX-05-06-2024.jpg" alt="">
                             </div>
-                            <SearchComponent />
+                            <SearchComponent @search="getResults"/>
                         </div>
                         <div class="lower-space">
                             <p>ciao</p>
