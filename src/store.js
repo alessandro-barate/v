@@ -10,7 +10,7 @@ export const store = reactive({
         preQuery: '&query=',
         query: '',
         movie: 'movie',
-        tvSerie: '',
+        tvSerie: 'tv',
         
     },
 });
