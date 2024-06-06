@@ -10,7 +10,14 @@ export default {
     data(){
         return {
             store,
+            title: '',
         };
+    },
+
+    methods: {
+        show(){
+            //console.log(this.title);
+        }
     },
 
     
@@ -19,6 +26,6 @@ export default {
 
 <template>
     <div class="search-section">
-        <input type="text" placeholder="Cerca qui il film">
+        <input type="text" placeholder="Cerca qui il film" @keyup.enter="show" v-model="title">
     </div>
 </template>
