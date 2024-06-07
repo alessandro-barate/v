@@ -36,13 +36,13 @@ export default {
             // Movie API call 
             axios.get(this.store.endpoints.baseUrl + this.store.endpoints.movie + this.store.endpoints.myApi + this.store.endpoints.preQuery + this.store.endpoints.query).then((response) => {
             this.store.movieResults = response.data.results;
-            console.log(this.store.movieResults);
+            this.store.showTitles = true;
             });
 
             // TV serie API call
             axios.get(this.store.endpoints.baseUrl + this.store.endpoints.tvSerie + this.store.endpoints.myApi + this.store.endpoints.preQuery + this.store.endpoints.query).then((response) => {
             this.store.tvResults = response.data.results;
-            console.log(this.store.tvResults);
+            this.store.showTitles = true;
             });
 
             this.store.loading = false;

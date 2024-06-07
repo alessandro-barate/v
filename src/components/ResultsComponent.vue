@@ -22,7 +22,7 @@ export default {
 </script>
 
 <template>
-    <div class="show-section-title margin-t">
+    <div v-show="this.store.showTitles" class="show-section-title margin-t">
         <h2>Movie</h2>
     </div>
     <div v-for="movie in this.store.movieResults" class="col">
@@ -54,7 +54,7 @@ export default {
         </ul>
     </div>
     
-    <div class="show-section-title margin-t">
+    <div v-show="this.store.showTitles" class="show-section-title margin-t">
         <h2>TV Serie</h2>
     </div>
     <div v-for="movie in this.store.tvResults" class="col">
