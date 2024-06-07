@@ -26,7 +26,7 @@ export default {
     <div>
         <ul v-for="movie in this.store.movieResults">
             <div v-if="movie.backdrop_path" class="movie-image">
-                <img :src="this.store.endpoints.baseImageUrl + movie.backdrop_path" alt="">
+                <img :src="this.store.endpoints.baseImageUrl + movie.poster_path" alt="">
             </div>
             <div v-else alt="Nessuna immagine da visualizzare">
                 <p>Immagine di copertina non presente</p>
