@@ -9,14 +9,18 @@ export default {
             store,
         };
     },
+
+    // methods: {
+    //     getIntVote(){
+    //         return Math.round(this.store.movieResults.vote_average / 2);
+    //         console.log(this.getIntVote);
+    //     }    
+    // },
     
 };
 </script>
 
 <template>
-
-    <!-- PROVE FONT AWESOME
-        <FontAwesomeIcon :icon="byPrefixAndName.fas['house']" /> -->
 
     <div>
         <ul v-for="movie in this.store.movieResults">
