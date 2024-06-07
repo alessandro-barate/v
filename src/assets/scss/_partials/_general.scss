@@ -1,20 +1,31 @@
-.container {
-    width: 100%;
+body {
     background-color: rgb(157, 157, 157);
 }
 
+.container {
+    width: 100%;
+}
+
 .row {
+    width: 80%;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    text-align: center;
 }
 
 .col {
-    width: calc(100% / 3); 
+    width: calc(100% / 3);
+    background-color: black;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    color: white;
 }
 
 .upper-space {
     width: 100%;
     height: 100%;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,6 +35,16 @@
 
 .logo img {
     width: 20%;
+}
+
+.movie-section-title {
+    width: 80%;
+    height: 60px;
+    margin: 0 auto;
+    padding-top: 20px;
+    color: #DC1F2B;
+    background-color: black;
+    text-align: center;
 }
 
 .movie-image {
@@ -47,4 +68,8 @@ input {
 .flag {
     width: 2%;
     border-radius: 50%;
+}
+
+ul {
+    list-style: none;
 }

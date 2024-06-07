@@ -66,6 +66,9 @@ export default {
         </header>
         <section>
             <div class="container" v-cloak>
+                <div class="movie-section-title">
+                    <h2>Movie</h2>
+                </div>
                 <div class="row">
                     <ResultsComponent/>
                 </div>
