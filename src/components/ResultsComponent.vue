@@ -1,5 +1,6 @@
 <script>
 import { store } from '../store.js';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 export default {
     name: 'ResultsComponent',
 
@@ -13,6 +14,10 @@ export default {
 </script>
 
 <template>
+
+    <!-- PROVE FONT AWESOME
+        <FontAwesomeIcon :icon="byPrefixAndName.fas['house']" /> -->
+        
     <div>
         <ul v-for="movie in this.store.movieResults">
             <div v-if="movie.backdrop_path" class="movie-image">
@@ -21,9 +26,9 @@ export default {
             <div v-else alt="Nessuna immagine da visualizzare">
                 <p>Immagine di copertina non presente</p>
             </div>
-            <li>{{ movie.title }}</li>
-            <li>{{ movie.original_title }}</li>
-            <li>
+            <li>Titolo: {{ movie.title }}</li>
+            <li>Titolo originale: {{ movie.original_title }}</li>
+            <li>Nazionalità:
                 <img v-if="movie.original_language === 'it'" src="../assets/img/flags/italy-flag.png" alt="Bandiera Italia" class="flag">
                 <img v-else-if="movie.original_language === 'en'" src="../assets/img/flags/uk-flag.svg" alt="Bandiera Regno Unito" class="flag">
                 <img v-else-if="movie.original_language === 'de'" src="../assets/img/flags/germany-flag.png" alt="Bandiera Germania" class="flag">
@@ -34,7 +39,7 @@ export default {
                 <img v-else-if="movie.original_language === 'zh'" src="../assets/img/flags/switzerland-flag.png" alt="Bandiera Svizzera" class="flag">
                 <p v-else>{{ movie.original_language }}</p>
             </li>
-            <li>{{ movie.vote_average }}</li>
+            <li>Voto: {{ movie.vote_average }}</li>
         </ul>
     </div>
 
@@ -49,9 +54,9 @@ export default {
             <div v-else alt="Nessuna immagine da visualizzare">
                 <p>Immagine di copertina non presente</p>
             </div>
-            <li>{{ movie.name }}</li>
-            <li>{{ movie.original_name }}</li>
-            <li>
+            <li>Titolo: {{ movie.name }}</li>
+            <li><span>Titolo originale: </span>{{ movie.original_name }}</li>
+            <li>Nazionalità: 
                 <img v-if="movie.original_language === 'it'" src="../assets/img/flags/italy-flag.png" alt="Bandiera Italia" class="flag">
                 <img v-else-if="movie.original_language === 'en'" src="../assets/img/flags/uk-flag.svg" alt="Bandiera Regno Unito" class="flag">
                 <img v-else-if="movie.original_language === 'de'" src="../assets/img/flags/germany-flag.png" alt="Bandiera Germania" class="flag">
@@ -61,7 +66,7 @@ export default {
                 <img v-else-if="movie.original_language === 'ch'" src="../assets/img/flags/china-flag.png" alt="Bandiera Cina" class="flag">
                 <img v-else-if="movie.original_language === 'zh'" src="../assets/img/flags/switzerland-flag.png" alt="Bandiera Svizzera" class="flag">
             </li>
-            <li>{{ movie.vote_average }}</li>
+            <li> Voto: {{ movie.vote_average }}</li>
         </ul>
     </div>
 </template>
