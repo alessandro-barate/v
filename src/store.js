@@ -5,12 +5,12 @@ export const store = reactive({
     movieResults: [],
     tvResults: [],
     endpoints: {
-        baseUrl: 'https://api.themoviedb.org/3/search/',
+        baseUrl: 'https://api.themoviedb.org/3/',
         myApi: '?api_key=bda3e142a7908a93f44deceb31c6bc17',
         preQuery: '&query=',
         query: '',
-        movie: 'movie',
-        tvSerie: 'tv',
+        movie: 'search/movie',
+        tvSerie: 'search/tv',
         
     },
 });
