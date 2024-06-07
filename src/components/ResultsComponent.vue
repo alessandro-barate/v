@@ -17,7 +17,7 @@ export default {
 
     <!-- PROVE FONT AWESOME
         <FontAwesomeIcon :icon="byPrefixAndName.fas['house']" /> -->
-        
+
     <div>
         <ul v-for="movie in this.store.movieResults">
             <div v-if="movie.backdrop_path" class="movie-image">
