@@ -67,9 +67,7 @@ export default {
         <section>
             <div class="container" v-cloak>
                 <div class="row">
-                    <div class="col lower-space">
-                        <ResultsComponent/>
-                    </div>
+                    <ResultsComponent/>
                 </div>
             </div>
         </section>
