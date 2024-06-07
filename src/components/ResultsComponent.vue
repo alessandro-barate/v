@@ -12,9 +12,9 @@ export default {
 
     computed: {
         getIntVote(){
-            const starVote = Math.round(this.store.movieResults.vote_average / 2);
-            console.log(this.starVote);
-            return this.starVote;
+            this.store.starVote = Math.round(this.store.movieResults.vote_average / 2);
+            console.log(this.store.starVote);
+            return this.store.starVote;
         },
     },
     
@@ -44,7 +44,10 @@ export default {
                 <img v-else-if="movie.original_language === 'zh'" src="../assets/img/flags/switzerland-flag.png" alt="Bandiera Svizzera" class="flag">
                 <p v-else>{{ movie.original_language }}</p>
             </li>
-            <li>Voto: {{ this.starVote }}</li>
+            <li>Voto: {{ this.store.starVote }}
+                <span v-for="n in 5"><i class="fas fa-star"></i></span>
+            </li>
+            
         </ul>
     </div>
 
