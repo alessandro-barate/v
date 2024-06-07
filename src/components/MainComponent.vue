@@ -56,20 +56,19 @@ export default {
 
 <template>
     <main>
+        <header>
+            <div class="upper-space">
+                <div class="logo">
+                    <img src="../assets/img/BOOLFLIX-05-06-2024.jpg" alt="">
+                </div>
+                <SearchComponent @search="getResults"/>
+            </div>
+        </header>
         <section>
             <div class="container" v-cloak>
                 <div class="row">
-                    <div class="col">
-                        <div class="upper-space">
-                            <div class="logo">
-                                <img src="../assets/img/BOOLFLIX-05-06-2024.jpg" alt="">
-                            </div>
-                            <SearchComponent @search="getResults"/>
-                            
-                        </div>
-                        <div class="lower-space">
-                            <ResultsComponent/>
-                        </div>
+                    <div class="col lower-space">
+                        <ResultsComponent/>
                     </div>
                 </div>
             </div>
