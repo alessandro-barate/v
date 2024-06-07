@@ -2,7 +2,7 @@
 import axios from 'axios';
 import { store } from '../store.js';
 import SearchComponent from '../components/SearchComponent.vue';
-import ResultsComponent from '../components/ResultsComponent.vue';
+import ResultsComponent from './ResultsComponent.vue';
 export default {
     name: 'MainComponent',
     components: {
@@ -66,9 +66,6 @@ export default {
         </header>
         <section>
             <div class="container" v-cloak>
-                <div class="movie-section-title">
-                    <h2>Movie</h2>
-                </div>
                 <div class="row">
                     <ResultsComponent/>
                 </div>
