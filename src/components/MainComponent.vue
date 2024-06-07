@@ -51,12 +51,6 @@ export default {
         },
     },
     
-    computed: {
-        getIntVote(){
-            return Math.round(this.store.movieResults.vote_average / 2);
-            console.log(this.getIntVote);
-        },
-    },
 };
 </script>
 

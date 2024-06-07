@@ -10,12 +10,13 @@ export default {
         };
     },
 
-    // methods: {
-    //     getIntVote(){
-    //         return Math.round(this.store.movieResults.vote_average / 2);
-    //         console.log(this.getIntVote);
-    //     }    
-    // },
+    computed: {
+        getIntVote(){
+            const starVote = Math.round(this.store.movieResults.vote_average / 2);
+            console.log(this.starVote);
+            return this.starVote;
+        },
+    },
     
 };
 </script>
@@ -43,7 +44,7 @@ export default {
                 <img v-else-if="movie.original_language === 'zh'" src="../assets/img/flags/switzerland-flag.png" alt="Bandiera Svizzera" class="flag">
                 <p v-else>{{ movie.original_language }}</p>
             </li>
-            <li>Voto: {{ movie.vote_average }}</li>
+            <li>Voto: {{ this.starVote }}</li>
         </ul>
     </div>
 
