@@ -11,11 +11,23 @@ export default {
         };
     },
 
-    computed: {
-        getIntVote(){
-            this.store.starVote = Math.round(this.store.movieResults.vote_average / 2);
-            console.log(this.store.starVote);
-            return this.store.starVote;
+    // computed: {
+    //     getIntVote(){
+    //         this.store.starVote = Math.round(this.store.movieResults.vote_average / 2);
+    //         console.log(this.store.starVote);
+    //         return this.store.starVote;
+    //     },
+    // },
+
+    methods: {
+        getIntVote(vote, index){
+            if (index <= vote) {
+                return 'full';
+            } else if (index - vote <= 0.5) {
+                return 'half';
+            } else {
+                return 'empty';
+            }
         },
     },
     
