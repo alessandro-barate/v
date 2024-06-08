@@ -26,8 +26,8 @@ export default {
     <div v-show="this.store.showTitles" class="show-section-title margin-t">
         <h2>Movie</h2>
     </div>
-    <div v-for="(movie, index) in this.store.movieResults" :key="movie.id" class="col">
-        <div class="image-card" @mouseover="hover = index" @mouseleave="hover = null">
+    <div v-for="(movie, index) in this.store.movieResults" :key="movie.id" class="col" @mouseover="hover = index" @mouseleave="hover = null">
+        <div class="image-card">
             <img v-if="movie.backdrop_path && hover !== index" :src="this.store.endpoints.baseImageUrl + movie.poster_path" alt="">
             <div v-else-if="!movie.backdrop_path && hover !== index" alt="Nessuna immagine da visualizzare">
             <p>Nessuna immagine di copertina disponibile</p>
