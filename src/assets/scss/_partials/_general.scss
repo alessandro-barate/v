@@ -25,16 +25,27 @@ body {
     border: 2px solid white;
 }
 
-.image-card img:hover {
-    display: none;
-}
+// .image-card img:hover {
+//     display: none;
+// }
 
 .col ul {
-    display: none;
+    //display: none;
+    padding: 15px 20px 0 20px;
+    line-height: 20px;
 }
 
-.col ul:hover {
-    display: block;
+.col ul li {
+    padding-top: 5px;
+}
+
+// .col ul:hover {
+//     display: block;
+// }
+
+li span {
+    font-weight: bolder;
+    font-size: 20px;
 }
 
 .upper-space {
@@ -81,7 +92,7 @@ input {
 }
 
 .flag {
-    width: 2%;
+    width: 8%;
     border-radius: 50%;
 }
 

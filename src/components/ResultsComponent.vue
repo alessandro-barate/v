@@ -7,6 +7,7 @@ export default {
     data(){
         return {
             store,
+            flag: 'flag',
         };
     },
 
@@ -33,9 +34,9 @@ export default {
             <p>Immagine di copertina non presente</p>
         </div>
         <ul>
-            <li>Titolo: {{ movie.title }}</li>
-            <li>Titolo originale: {{ movie.original_title }}</li>
-            <li>Nazionalità:
+            <li><span>Titolo: </span>{{ movie.title }}</li>
+            <li><span>Titolo originale: </span>{{ movie.original_title }}</li>
+            <li><span>Nazionalità: </span>
                 <img v-if="movie.original_language === 'it'" src="../assets/img/flags/italy-flag.png" alt="Bandiera Italia" class="flag">
                 <img v-else-if="movie.original_language === 'en'" src="../assets/img/flags/uk-flag.svg" alt="Bandiera Regno Unito" class="flag">
                 <img v-else-if="movie.original_language === 'de'" src="../assets/img/flags/germany-flag.png" alt="Bandiera Germania" class="flag">
@@ -48,8 +49,11 @@ export default {
                 <img v-else-if="movie.original_language === 'zh'" src="../assets/img/flags/switzerland-flag.png" alt="Bandiera Svizzera" class="flag">
                 <p v-else>{{ movie.original_language }}</p>
             </li>
-            <li>Voto: {{ this.store.starVote }}
+            <li><span>Voto: </span>{{ this.store.starVote }}
                 <span v-for="n in 5"><i class="fas fa-star"></i></span>
+            </li>
+            <li>
+                <p><span>Overview: </span>{{ movie.overview }}</p>
             </li>
         </ul>
     </div>

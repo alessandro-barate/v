@@ -37,6 +37,7 @@ export default {
             axios.get(this.store.endpoints.baseUrl + this.store.endpoints.movie + this.store.endpoints.myApi + this.store.endpoints.preQuery + this.store.endpoints.query).then((response) => {
             this.store.movieResults = response.data.results;
             this.store.showTitles = true;
+            console.log(this.store.movieResults);
             });
 
             // TV serie API call
