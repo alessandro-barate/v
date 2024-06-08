@@ -7,6 +7,7 @@ export default {
     data(){
         return {
             store,
+            hover: true,
         };
     },
 
@@ -27,12 +28,13 @@ export default {
     </div>
     <div v-for="movie in this.store.movieResults" class="col">
         <div v-if="movie.backdrop_path" class="image-card">
-            <img :src="this.store.endpoints.baseImageUrl + movie.poster_path" alt="">
+            <img :src="this.store.endpoints.baseImageUrl + movie.poster_path" alt=""
+             @mouseover="hover = true" @mouseleave="hover = false">
         </div>
         <div v-else alt="Nessuna immagine da visualizzare">
             <p>Nessuna immagine di copertina disponibile</p>
         </div>
-        <ul>
+        <ul v-if="hover">
             <li><span>Titolo: </span>{{ movie.title }}</li>
             <li><span>Titolo originale: </span>{{ movie.original_title }}</li>
             <li><span>Nazionalità: </span>

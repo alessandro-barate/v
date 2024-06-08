@@ -10,11 +10,7 @@ export default {
     },
 
     methods: {
-        removeClass(){
-            const magnifier = document.getElementById("magnifier");
-            magnifier.classList.remove('hidden');
-            return
-        }
+        
     }
     
 };
@@ -37,6 +33,6 @@ export default {
             </li>
         </ul>
         <input type="text" placeholder="Cerca qui il film o la serie tv" @keyup.enter="$emit('search')" 
-        v-model="this.store.endpoints.query" class="hidden">
+        v-model="this.store.endpoints.query">
     </div>
 </template>
