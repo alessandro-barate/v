@@ -60,7 +60,10 @@ export default {
                     <p v-else>{{ movie.original_language }}</p>
                 </li>
                 <li><span>Voto: </span>{{ this.store.starVote }}
-                    <span v-for="n in 5"><i class="fas fa-star"></i></span>
+                    <span v-for="n in 5" :key="n">
+                        <i v-if="this.getIntVote(movie.starVote, n) === 'full'" :icon="['fas', 'fa-star']"></i>
+                        <i v-if="this.getIntVote(movie.starVote, n) === 'half'" :icon="['fas', 'fa-star-half']"></i>
+                        <i v-if="this.getIntVote(movie.starVote, n) === 'empty'" :icon="[]"></i></span>
                 </li>
                 <li>
                     <p v-if="movie.overview === ''"><span>Overview: </span>Nessuna overview disponibile</p>
