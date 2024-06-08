@@ -43,7 +43,7 @@ body {
 //     display: block;
 // }
 
-li span {
+.col li span {
     font-weight: bolder;
     font-size: 20px;
 }
@@ -84,7 +84,7 @@ li span {
 .search-section {
     width: 40%;
     height: 100%;
-    text-align: end;
+    text-align: center;
 }
 
 input {
@@ -106,7 +106,6 @@ ul {
 
 nav ul {
     display: flex;
-    
 }
 
 nav li {
@@ -119,9 +118,26 @@ nav button {
     background-color: transparent;
     border: none;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .search-section ul {
     color: white;
     display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.search-section li {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.search-section li span {
+    font-size: 18px;
+}
+
+.font-19 {
+    font-size: 19px;
 }
