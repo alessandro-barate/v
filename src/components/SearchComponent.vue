@@ -8,6 +8,14 @@ export default {
             store,
         };
     },
+
+    methods: {
+        removeClass(){
+            const magnifier = document.getElementById("magnifier");
+            magnifier.classList.remove('hidden');
+            return
+        }
+    }
     
 };
 </script>
@@ -16,7 +24,7 @@ export default {
     <div class="search-section">
         <ul>
             <li>
-                <i class="fas fa-magnifying-glass font-19"></i>
+                <i @click="removeClass" class="fas fa-magnifying-glass font-19" id="magnifier"></i>
             </li>
             <li>
                 <span>Kids</span>
@@ -28,6 +36,7 @@ export default {
                 <span><i class="fas fa-user"></i> My account <i class="fas fa-angle-down"></i></span>
             </li>
         </ul>
-        <input type="text" placeholder="Cerca qui il film o la serie tv" @keyup.enter="$emit('search')" v-model="this.store.endpoints.query">
+        <input type="text" placeholder="Cerca qui il film o la serie tv" @keyup.enter="$emit('search')" 
+        v-model="this.store.endpoints.query" class="hidden">
     </div>
 </template>
