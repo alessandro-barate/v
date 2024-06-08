@@ -12,13 +12,15 @@ body {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
+    gap: 5px;
 }
 
 .col {
-    width: calc(100% / 3);
+    width: calc(100% / 3 - 5px);
     background-color: black;
     padding-top: 25px;
     padding-bottom: 25px;
+    margin: 0 auto;
     color: white;
 }
 
