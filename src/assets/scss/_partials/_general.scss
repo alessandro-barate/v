@@ -106,5 +106,17 @@ ul {
 
 nav ul {
     display: flex;
+    
+}
+
+nav li {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+nav button {
     color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
 }

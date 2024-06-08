@@ -64,19 +64,25 @@ export default {
                 <nav>
                     <ul>
                         <li>
-                            <button>a</button>
+                            <button>Home</button>
                         </li>
                         <li>
-                            <button>a</button>
+                            <button>Movies</button>
                         </li>
                         <li>
-                            <button>a</button>
+                            <button>Tv Series</button>
                         </li>
                         <li>
-                            <button>a</button>
+                            <button>Collections</button>
                         </li>
                         <li>
-                            <button>a</button>
+                            <button>Discover</button>
+                        </li>
+                        <li>
+                            <button>Trending</button>
+                        </li>
+                        <li>
+                            <button>Genres</button>
                         </li>
                     </ul>
                 </nav>
