@@ -7,7 +7,6 @@ export default {
     data(){
         return {
             store,
-            flag: 'flag',
         };
     },
 
@@ -31,7 +30,7 @@ export default {
             <img :src="this.store.endpoints.baseImageUrl + movie.poster_path" alt="">
         </div>
         <div v-else alt="Nessuna immagine da visualizzare">
-            <p>Immagine di copertina non presente</p>
+            <p>Nessuna immagine di copertina disponibile</p>
         </div>
         <ul>
             <li><span>Titolo: </span>{{ movie.title }}</li>
@@ -53,7 +52,8 @@ export default {
                 <span v-for="n in 5"><i class="fas fa-star"></i></span>
             </li>
             <li>
-                <p><span>Overview: </span>{{ movie.overview }}</p>
+                <p v-if="movie.overview === ''"><span>Overview: </span>Nessuna overview disponibile</p>
+                <p v-else><span>Overview: </span>{{ movie.overview }}</p>
             </li>
         </ul>
     </div>
