@@ -26,7 +26,7 @@ export default {
         <h2>Movie</h2>
     </div>
     <div v-for="movie in this.store.movieResults" class="col">
-        <div v-if="movie.backdrop_path">
+        <div v-if="movie.backdrop_path" class="image-card">
             <img :src="this.store.endpoints.baseImageUrl + movie.poster_path" alt="">
         </div>
         <div v-else alt="Nessuna immagine da visualizzare">

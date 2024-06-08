@@ -22,6 +22,19 @@ body {
     padding-bottom: 25px;
     margin: 0 auto;
     color: white;
+    border: 2px solid white;
+}
+
+.image-card img:hover {
+    display: none;
+}
+
+.col ul {
+    display: none;
+}
+
+.col ul:hover {
+    display: block;
 }
 
 .upper-space {
