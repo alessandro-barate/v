@@ -30,23 +30,14 @@ header {
     border: 2px solid white;
 }
 
-// .image-card img:hover {
-//     display: none;
-// }
-
 .col ul {
-    //display: none;
-    margin: 15px 20px 0 20px;
+    padding: 15px 20px 0 20px;
     line-height: 20px;
 }
 
 .col ul li {
     padding-top: 5px;
 }
-
-// .col ul:hover {
-//     display: block;
-// }
 
 .col li span {
     font-weight: bolder;
@@ -84,6 +75,10 @@ header {
 
 .movie-image {
     width: calc(100% / 3);
+}
+
+.image-card ul {
+    height: 100%;
 }
 
 .search-section {

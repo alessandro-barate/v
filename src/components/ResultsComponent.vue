@@ -28,36 +28,40 @@ export default {
     </div>
     <div v-for="(movie, index) in this.store.movieResults" :key="movie.id" class="col">
         <div class="image-card" @mouseover="hover = index" @mouseleave="hover = null">
-            <img v-if="movie.backdrop_path && hover !== index" :src="this.store.endpoints.baseImageUrl + movie.poster_path" alt="">
-             <div v-else alt="Nessuna immagine da visualizzare">
+            <template v-if="movie.backdrop_path">
+                <img  v-show="hover !== index" :src="this.store.endpoints.baseImageUrl + movie.poster_path" alt="">
+                <ul v-show="hover === index">
+                    <li><span>Titolo: </span>{{ movie.title }}</li>
+                    <li><span>Titolo originale: </span>{{ movie.original_title }}</li>
+                    <li><span>Nazionalità: </span>
+                        <img v-if="movie.original_language === 'it'" src="../assets/img/flags/italy-flag.png" alt="Bandiera Italia" class="flag">
+                        <img v-else-if="movie.original_language === 'en'" src="../assets/img/flags/uk-flag.svg" alt="Bandiera Regno Unito" class="flag">
+                        <img v-else-if="movie.original_language === 'de'" src="../assets/img/flags/germany-flag.png" alt="Bandiera Germania" class="flag">
+                        <img v-else-if="movie.original_language === 'fr'" src="../assets/img/flags/france-flag.svg" alt="Bandiera Francia" class="flag">
+                        <img v-else-if="movie.original_language === 'es'" src="../assets/img/flags/spain-flag.png" alt="Bandiera Spagna" class="flag">
+                        <img v-else-if="movie.original_language === 'pt'" src="../assets/img/flags/portugal-flag.png" alt="Bandiera Portogallo" class="flag">
+                        <img v-else-if="movie.original_language === 'fi'" src="../assets/img/flags/finland-flag.png" alt="Bandiera Finlandia" class="flag">
+                        <img v-else-if="movie.original_language === 'ja'" src="../assets/img/flags/japan-flag.png" alt="Bandiera Giappone" class="flag">
+                        <img v-else-if="movie.original_language === 'ch'" src="../assets/img/flags/china-flag.png" alt="Bandiera Cina" class="flag">
+                        <img v-else-if="movie.original_language === 'zh'" src="../assets/img/flags/switzerland-flag.png" alt="Bandiera Svizzera" class="flag">
+                        <p v-else>{{ movie.original_language }}</p>
+                    </li>
+                    <li><span>Voto: </span>{{ this.store.starVote }}
+                        <span v-for="n in 5"><i class="fas fa-star"></i></span>
+                    </li>
+                    <li>
+                        <p v-if="movie.overview === ''"><span>Overview: </span>Nessuna overview disponibile</p>
+                        <p v-else><span>Overview: </span>{{ movie.overview }}</p>
+                    </li>
+                </ul>
+            </template>
+            
+            <div v-else alt="Nessuna immagine da visualizzare">
             <p>Nessuna immagine di copertina disponibile</p>
         </div>
         </div>
         
-        <ul v-if="hover === index">
-            <li><span>Titolo: </span>{{ movie.title }}</li>
-            <li><span>Titolo originale: </span>{{ movie.original_title }}</li>
-            <li><span>Nazionalità: </span>
-                <img v-if="movie.original_language === 'it'" src="../assets/img/flags/italy-flag.png" alt="Bandiera Italia" class="flag">
-                <img v-else-if="movie.original_language === 'en'" src="../assets/img/flags/uk-flag.svg" alt="Bandiera Regno Unito" class="flag">
-                <img v-else-if="movie.original_language === 'de'" src="../assets/img/flags/germany-flag.png" alt="Bandiera Germania" class="flag">
-                <img v-else-if="movie.original_language === 'fr'" src="../assets/img/flags/france-flag.svg" alt="Bandiera Francia" class="flag">
-                <img v-else-if="movie.original_language === 'es'" src="../assets/img/flags/spain-flag.png" alt="Bandiera Spagna" class="flag">
-                <img v-else-if="movie.original_language === 'pt'" src="../assets/img/flags/portugal-flag.png" alt="Bandiera Portogallo" class="flag">
-                <img v-else-if="movie.original_language === 'fi'" src="../assets/img/flags/finland-flag.png" alt="Bandiera Finlandia" class="flag">
-                <img v-else-if="movie.original_language === 'ja'" src="../assets/img/flags/japan-flag.png" alt="Bandiera Giappone" class="flag">
-                <img v-else-if="movie.original_language === 'ch'" src="../assets/img/flags/china-flag.png" alt="Bandiera Cina" class="flag">
-                <img v-else-if="movie.original_language === 'zh'" src="../assets/img/flags/switzerland-flag.png" alt="Bandiera Svizzera" class="flag">
-                <p v-else>{{ movie.original_language }}</p>
-            </li>
-            <li><span>Voto: </span>{{ this.store.starVote }}
-                <span v-for="n in 5"><i class="fas fa-star"></i></span>
-            </li>
-            <li>
-                <p v-if="movie.overview === ''"><span>Overview: </span>Nessuna overview disponibile</p>
-                <p v-else><span>Overview: </span>{{ movie.overview }}</p>
-            </li>
-        </ul>
+        
     </div>
     
     <div v-show="this.store.showTitles" class="show-section-title margin-t">
