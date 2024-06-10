@@ -11,15 +11,15 @@ export default {
         };
     },
 
-    computed: {
+
+    methods: {
         getIntVote(){
             this.store.starVote = Math.round(this.store.movieResults.vote_average / 2);
             console.log(this.store.starVote);
+            console.log('ciao');
             return this.store.starVote;
         },
-    },
 
-    methods: {
         getStars(vote, index){
             if (index <= vote) {
                 return 'full';
@@ -64,9 +64,9 @@ export default {
                 <li>
                      <span>Voto: </span>                       <!--  {{ this.store.starVote }} -->
                     <span v-for="n in 5" :key="n">
-                        <i v-if="this.getStars(movie.starVote, n) === 'full'" :icon="['fas', 'fa-star']"></i>
-                        <i v-if="this.getStars(movie.starVote, n) === 'half'" :icon="['fas', 'fa-star-half']"></i>
-                        <i v-if="this.getStars(movie.starVote, n) === 'empty'" :icon="[]"></i>
+                        <i v-if="this.getStars(this.store.starVote, n) === 'full'" :icon="['fas', 'fa-star']"></i>
+                        <i v-if="this.getStars(this.store.starVote, n) === 'half'" :icon="['fas', 'fa-star-half']"></i>
+                        <i v-if="this.getStars(this.store.starVote, n) === 'empty'" :icon="[]"></i>
                     </span>
                 </li>
                 <li>

@@ -11,7 +11,15 @@ export default {
 
     methods: {
         showSearchBar(){
-            this.store.showSearchBar = true;
+            // if (this.store.showSearchBar = false) {
+                this.store.showSearchBar = true;
+
+            //     if (this.store.showSearchBar = true) {
+            //         this.store.showSearchBar = false;
+            //  }
+            // } else {
+            //     this.store.showSearchBar = false;
+            // };   
         }
     }
     
