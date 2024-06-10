@@ -3,6 +3,7 @@ import {reactive} from 'vue';
 export const store = reactive({
     loading: true,
     showTitles: false,
+    showSearchBar: false,
     movieResults: [],
     tvResults: [],
     starVote: '',
