@@ -18,12 +18,10 @@ export default {
     },
 
     getStars(vote, index) {
-      if (index === vote) {
-        return "full";
+      if (index == vote) {
+        return "fa-star";
       } else if (index - vote <= 0.5) {
-        return "half";
-      } else {
-        return "empty";
+        return "fa-star-half-stroke";
       }
     },
   },
@@ -124,8 +122,13 @@ export default {
         <li>
           <span>Voto: {{ getIntVote(movie.vote_average) }}</span>
 
-          <span v-for="n in 5" :key="n">
+          <span>
             <i
+              v-for="n in 5"
+              :key="n"
+              :icon="('fas', getStars(getIntVote(movie.vote_average), n))"
+            ></i>
+            <!-- <i
               v-if="getStars(getIntVote(movie.vote_average), n) === 'full'"
               :icon="['fas', 'fa-star']"
             ></i>
@@ -136,7 +139,7 @@ export default {
             <i
               v-if="getStars(getIntVote(movie.vote_average), n) === 'empty'"
               :icon="[]"
-            ></i>
+            ></i> -->
           </span>
         </li>
         <li>
