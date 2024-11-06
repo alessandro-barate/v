@@ -1,14 +1,12 @@
 <script>
-import MainComponent from './components/MainComponent.vue';
+import MainComponent from "./components/MainComponent.vue";
 export default {
-    name: 'Boolflix',
-    components: {
-        MainComponent,
-    },
-
+  name: "Boolflix",
+  components: {
+    MainComponent,
+  },
 };
 </script>
 <template>
-    <MainComponent/>
+  <MainComponent />
 </template>
-
